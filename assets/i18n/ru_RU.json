@@ -1,0 +1,31 @@
+{
+  "title": "Sys Dia Log",
+  "home": "Домой",
+  "measurement": "Измерение",
+  "settings": "Настройки",
+  "pulse": "Пульс",
+  "bpm": "{bpm} Уд/Мин",
+  "systolic": "Систолическое",
+  "diastolic": "Диастолическое",
+  "save": "Сохранить",
+  "created": "Добавлено новое измерение - {createdAt}.",
+  "add": "Добавить Измерение",
+  "dismiss": "Закрыть",
+  "category": {
+    "LOW": "Низкое",
+    "NORMAL": "Норма",
+    "ELEVATED": "Повышенное",
+    "HYPERTENSION_STAGE_1": "Гипертония I",
+    "HYPERTENSION_STAGE_2": "Гипертония II",
+    "HYPERTENSION_CRISIS": "Гипертонический криз"
+  },
+  "appearance": "Внешний вид",
+  "system": "Системный",
+  "system_desc": "Следует системным настройкам",
+  "dark_mode": "Темный режим",
+  "locale": "Язык",
+  "locale_desc": "Выберите языковой стандарт",
+  "en": "English",
+  "ru": "Русский",
+  "be": "Беларуская"
+}
