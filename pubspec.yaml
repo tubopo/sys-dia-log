@@ -5,33 +5,33 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.6 <3.7.6"
+  sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
-  flutter_i18n: ^0.32.4
-  logging: ^1.1.0
-  cupertino_icons: ^1.0.5
-  auto_route: ^5.0.4
-  numberpicker: ^2.1.1
+  intl: ^0.18.1
+  flutter_i18n: ^0.34.0
+  logging: ^1.2.0
+  cupertino_icons: ^1.0.6
+  auto_route: ^7.8.4
+  numberpicker: ^2.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  provider: ^6.0.5
-  graphic: ^1.0.1
+  provider: ^6.1.1
+  graphic: ^2.2.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.3.3
-  flutter_lints: ^2.0.1
-  flutter_launcher_icons: ^0.11.0
-  auto_route_generator: ^5.0.3
-  hive_generator: ^2.0.0
+  build_runner: ^2.4.6
+  flutter_lints: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
+  auto_route_generator: ^7.3.2
+  hive_generator: ^2.0.1
 
 flutter:
   uses-material-design: true
