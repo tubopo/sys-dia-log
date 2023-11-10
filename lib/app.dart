@@ -4,10 +4,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sys_dia_log/locale/locales.dart';
 import 'package:sys_dia_log/modules/settings/providers/app_settings_provider.dart';
-import 'package:sys_dia_log/routing/router.dart';
+import 'package:sys_dia_log/routing/app_router.dart';
 
 class SysDiaLogApp extends StatelessWidget {
-  SysDiaLogApp({Key? key}) : super(key: key);
+  SysDiaLogApp({super.key});
 
   final _appRouter = AppRouter();
 
@@ -20,7 +20,6 @@ class SysDiaLogApp extends StatelessWidget {
         ),
       ],
       builder: (context, child) => MaterialApp.router(
-        useInheritedMediaQuery: true,
         title: 'Sys Dia Log',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

@@ -8,9 +8,10 @@ import 'package:sys_dia_log/modules/home/ui/add_new_button.dart';
 import 'package:sys_dia_log/modules/home/ui/measurements_list.dart';
 import 'package:sys_dia_log/modules/home/ui/refresh_button.dart';
 import 'package:sys_dia_log/modules/measurement/models/measurement.dart';
-import 'package:sys_dia_log/routing/router.dart';
+import 'package:sys_dia_log/routing/app_router.dart';
 import 'package:sys_dia_log/shared/ui/loading_indicator.dart';
 
+@RoutePage()
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -28,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
   }
 
   _addNavigate() {
-    context.router.navigate(MeasurementViewRoute(
+    context.router.navigate(MeasurementRoute(
         onAddNewMeasurement: (Measurement m) => setState(() {})));
   }
 
