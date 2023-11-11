@@ -11,6 +11,8 @@ import 'hive/hive_box.dart';
 
 /// Sys Dia Log application entrypoint.
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await Hive.initFlutter();
 
   Hive.registerAdapter(BloodPressureHiveAdapter());

@@ -10,7 +10,9 @@ class NavBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: [const HomeRoute(), MeasurementRoute(), const SettingsRoute()],
+      routes: const [HomeRoute(), MeasurementRoute(), SettingsRoute()],
+      inheritNavigatorObservers: true,
+      navigatorObservers: () => [AutoRouteObserver()],
       transitionBuilder: (context, child, animation) => FadeTransition(
         opacity: animation,
         child: child,

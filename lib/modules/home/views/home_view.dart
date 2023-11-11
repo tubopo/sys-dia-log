@@ -19,7 +19,8 @@ class HomeView extends StatefulWidget {
   State<StatefulWidget> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends State<HomeView>
+    with AutoRouteAwareStateMixin<HomeView> {
   late Future<Box<Measurement>> _futureBox;
 
   @override
@@ -29,14 +30,21 @@ class _HomeViewState extends State<HomeView> {
   }
 
   _addNavigate() {
-    context.router.navigate(MeasurementRoute(
-        onAddNewMeasurement: (Measurement m) => setState(() {})));
+    context.router.navigate(const MeasurementRoute());
   }
 
   _onRefresh() {
     setState(() {
       _futureBox = Hive.openBox<Measurement>(measurementsBox);
     });
+  }
+
+  @override
+  void didChangeTabRoute(TabPageRoute previousRoute) {
+    //refresh state to resolve future builder state
+    if (previousRoute.name != HomeRoute.name) {
+      setState(() {});
+    }
   }
 
   @override
