@@ -13,11 +13,13 @@
   "dismiss": "Dismiss",
   "category": {
     "LOW": "Low",
+    "OPTIMAL": "Optimal",
     "NORMAL": "Normal",
-    "ELEVATED": "Pre-High",
-    "HYPERTENSION_STAGE_1": "Hypertension stage 1",
-    "HYPERTENSION_STAGE_2": "Hypertension stage 2",
-    "HYPERTENSION_CRISIS": "Hypertension crisis"
+    "HIGH_NORMAL": "High Normal",
+    "GRADE_1_HYPERTENSION": "Hypertension grade 1",
+    "GRADE_2_HYPERTENSION": "Hypertension grade 2",
+    "GRADE_3_HYPERTENSION": "Hypertension grade 3",
+    "ISOLATED_SYSTOLIC_HYPERTENSION": "Systolic Hypertension"
   },
   "appearance": "Appearance",
   "system": "System",

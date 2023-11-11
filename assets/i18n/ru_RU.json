@@ -13,11 +13,13 @@
   "dismiss": "Закрыть",
   "category": {
     "LOW": "Низкое",
+    "OPTIMAL": "Оптимальное",
     "NORMAL": "Норма",
-    "ELEVATED": "Повышенное",
-    "HYPERTENSION_STAGE_1": "Гипертония I",
-    "HYPERTENSION_STAGE_2": "Гипертония II",
-    "HYPERTENSION_CRISIS": "Гипертонический криз"
+    "HIGH_NORMAL": "Повышенное",
+    "GRADE_1_HYPERTENSION": "Гипертония I",
+    "GRADE_2_HYPERTENSION": "Гипертония II",
+    "GRADE_3_HYPERTENSION": "Гипертония III",
+    "ISOLATED_SYSTOLIC_HYPERTENSION": "Гипертонический криз"
   },
   "appearance": "Внешний вид",
   "system": "Системный",

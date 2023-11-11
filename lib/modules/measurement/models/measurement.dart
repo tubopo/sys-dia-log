@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:sys_dia_log/modules/measurement/models/blood_pressure_category.dart';
+
 import 'blood_pressure.dart';
 import 'pulse.dart';
 
@@ -11,7 +11,6 @@ part 'measurement.g.dart';
 ///   "bloodPressure" : {
 ///     "systolic": 110,
 ///     "diastolic": 90,
-///     "category": "NORMAL"
 ///   },
 ///   "pulse": {
 ///       "bpm" : 65
@@ -42,13 +41,10 @@ class Measurement extends HiveObject {
   Measurement.values({
     required int systolic,
     required int diastolic,
-    required BloodPressureCategory category,
     required int bpm,
   }) : this(
-          bloodPressure: BloodPressure(
-              systolic: systolic,
-              diastolic: diastolic,
-              category: category.jsonValue),
+          bloodPressure:
+              BloodPressure(systolic: systolic, diastolic: diastolic),
           pulse: Pulse(bpm: bpm),
           createdAt: DateTime.now().toUtc(),
         );

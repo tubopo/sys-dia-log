@@ -76,7 +76,7 @@ class _HomeViewState extends State<HomeView>
             valueListenable:
                 Hive.box<Measurement>(measurementsBox).listenable(),
             builder: (context, data, child) => MeasurementsList(
-                items: ListDataTransform.transform(data.values)),
+                items: transformListData(data.values.toList())),
           );
         },
       ),
