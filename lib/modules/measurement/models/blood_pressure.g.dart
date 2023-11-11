@@ -19,20 +19,17 @@ class BloodPressureHiveAdapter extends TypeAdapter<BloodPressure> {
     return BloodPressure(
       systolic: fields[0] as int,
       diastolic: fields[1] as int,
-      category: fields[2] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, BloodPressure obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(2)
       ..writeByte(0)
       ..write(obj.systolic)
       ..writeByte(1)
-      ..write(obj.diastolic)
-      ..writeByte(2)
-      ..write(obj.category);
+      ..write(obj.diastolic);
   }
 
   @override

@@ -1,42 +1,35 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:sys_dia_log/modules/home/model/list_data.dart';
 import 'package:sys_dia_log/modules/home/model/list_item.dart';
+import 'package:sys_dia_log/modules/measurement/models/blood_pressure_category.dart';
 import 'package:sys_dia_log/modules/measurement/models/measurement.dart';
+import 'package:sys_dia_log/modules/measurement/service/blood_pressure_category_calc.dart';
 
-class ListDataTransform {
-  static List<ListItem> transform(Iterable<Measurement> data) {
-    return _sorted(data)
-        .map((e) => ListData(
-            e.bloodPressure.systolic,
-            e.bloodPressure.diastolic,
-            _toCategoryDisplayName(e.bloodPressure.category),
-            _toCategoryColor(e.bloodPressure.category),
-            e.pulse.bpm,
-            e.createdAt.toLocal()))
-        .map((e) => ListItem(e))
-        .toList();
-  }
+List<ListItem> transformListData(List<Measurement> data) {
+  //sort data by created date
+  data.sort((b, a) => a.createdAt.compareTo(b.createdAt));
 
-  static List _sorted(Iterable<Measurement> data) {
-    List sorted = data.toList();
-    sorted.sort((b, a) => a.createdAt.compareTo(b.createdAt));
-    return sorted;
-  }
+  return data
+      .map((Measurement m) => _mapToListData(m))
+      .map((ListData d) => ListItem(d))
+      .toList();
+}
 
-  static String _toCategoryDisplayName(String category) {
-    return "category.$category";
-  }
+ListData _mapToListData(Measurement data) {
+  int sys = data.bloodPressure.systolic;
+  int dia = data.bloodPressure.diastolic;
 
-  static const colorsMap = <String, Color>{
-    "LOW": Colors.grey,
-    "NORMAL": Colors.green,
-    "ELEVATED": Colors.yellow,
-    "HYPERTENSION_STAGE_1": Colors.amber,
-    "HYPERTENSION_STAGE_2": Colors.orange,
-    "HYPERTENSION_CRISIS": Colors.red,
-  };
+  BloodPressureCategory? category =
+      getBPCategoryByValues(systolic: sys, diastolic: dia);
 
-  static Color _toCategoryColor(String category) {
-    return colorsMap[category] ?? Colors.transparent;
-  }
+  return ListData(
+    sys,
+    dia,
+    "category.${(category?.jsonValue ?? "-")}", // unknown category displayed as '-'
+    Color(category?.hexColor ?? 0xFF424242), //unknown category color as grey
+    data.pulse.bpm,
+    data.createdAt,
+  );
 }

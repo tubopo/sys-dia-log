@@ -13,11 +13,13 @@
   "dismiss": "Закрыць",
   "category": {
     "LOW": "Нізкае",
+    "OPTIMAL": "Аптымальнае",
     "NORMAL": "Нармальнае",
-    "ELEVATED": "Павышаннае",
-    "HYPERTENSION_STAGE_1": "Гіпертанія I стадыя",
-    "HYPERTENSION_STAGE_2": "Гіпертанія II стадыя",
-    "HYPERTENSION_CRISIS": "Гіпертанічны крыз"
+    "HIGH_NORMAL": "Павышаннае",
+    "GRADE_1_HYPERTENSION": "Гіпертанія I стадыя",
+    "GRADE_2_HYPERTENSION": "Гіпертанія II стадыя",
+    "GRADE_3_HYPERTENSION": "Гіпертанія III стадыя",
+    "ISOLATED_SYSTOLIC_HYPERTENSION": "Гіпертанічны крыз"
   },
   "appearance": "Знешні выгляд",
   "system": "Cістэмны",
