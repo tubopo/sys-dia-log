@@ -22,14 +22,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     MeasurementRoute.name: (routeData) {
-      final args = routeData.argsAs<MeasurementRouteArgs>(
-          orElse: () => const MeasurementRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: MeasurementView(
-          key: args.key,
-          onAddNewMeasurement: args.onAddNewMeasurement,
-        ),
+        child: const MeasurementView(),
       );
     },
     NavBarRoute.name: (routeData) {
@@ -69,40 +64,16 @@ class HomeRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [MeasurementView]
-class MeasurementRoute extends PageRouteInfo<MeasurementRouteArgs> {
-  MeasurementRoute({
-    Key? key,
-    void Function(Measurement)? onAddNewMeasurement,
-    List<PageRouteInfo>? children,
-  }) : super(
+class MeasurementRoute extends PageRouteInfo<void> {
+  const MeasurementRoute({List<PageRouteInfo>? children})
+      : super(
           MeasurementRoute.name,
-          args: MeasurementRouteArgs(
-            key: key,
-            onAddNewMeasurement: onAddNewMeasurement,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'MeasurementRoute';
 
-  static const PageInfo<MeasurementRouteArgs> page =
-      PageInfo<MeasurementRouteArgs>(name);
-}
-
-class MeasurementRouteArgs {
-  const MeasurementRouteArgs({
-    this.key,
-    this.onAddNewMeasurement,
-  });
-
-  final Key? key;
-
-  final void Function(Measurement)? onAddNewMeasurement;
-
-  @override
-  String toString() {
-    return 'MeasurementRouteArgs{key: $key, onAddNewMeasurement: $onAddNewMeasurement}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

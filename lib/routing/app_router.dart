@@ -1,7 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 import 'package:sys_dia_log/modules/home/views/home_view.dart';
-import 'package:sys_dia_log/modules/measurement/models/measurement.dart';
 import 'package:sys_dia_log/modules/measurement/views/measurement_view.dart';
 import 'package:sys_dia_log/modules/settings/views/settings_view.dart';
 import 'package:sys_dia_log/shared/views/nav_bar_view.dart';
