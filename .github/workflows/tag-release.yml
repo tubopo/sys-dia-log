@@ -30,7 +30,7 @@ jobs:
       - name: Create Key
         env:
           KEY_JKS: ${{secrets.KEY_JKS}}
-        run: echo $KEY_JKS | base64 -d > android/key.jks
+        run: echo "$KEY_JKS" | base64 -d > android/key.jks
 
       - name: Install dependencies
         run: flutter pub get
