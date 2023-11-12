@@ -4,6 +4,10 @@ import 'package:sys_dia_log/modules/measurement/service/blood_pressure_category_
 
 void main() {
   group("calculate bp tests", () {
+    test('returns low category', () {
+      expect(getBPCategoryByValues(systolic: 80, diastolic: 70),
+          BloodPressureCategory.low);
+    });
     test('returns optimal category', () {
       expect(getBPCategoryByValues(systolic: 110, diastolic: 70),
           BloodPressureCategory.optimal);
@@ -37,6 +41,16 @@ void main() {
     test('returns isolated systolic hypertension category', () {
       expect(getBPCategoryByValues(systolic: 150, diastolic: 80),
           BloodPressureCategory.isolatedSystolicHypertension);
+    });
+
+    test('returns normal category', () {
+      expect(getBPCategoryByValues(systolic: 118, diastolic: 82),
+          BloodPressureCategory.normal);
+    });
+
+    test('returns optimal category', () {
+      expect(getBPCategoryByValues(systolic: 117, diastolic: 75),
+          BloodPressureCategory.optimal);
     });
   });
 }

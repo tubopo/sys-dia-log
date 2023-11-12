@@ -35,22 +35,19 @@ BloodPressureCategory? getBPCategoryByValues({
     return BloodPressureCategory.low;
   } else if (systolic < 120 && diastolic < 80) {
     return BloodPressureCategory.optimal;
-  } else if ((systolic >= 120 && systolic <= 129) &&
-      (diastolic >= 60 && diastolic <= 84)) {
+  } else if (systolic <= 129 && diastolic <= 84) {
     return BloodPressureCategory.normal;
-  } else if ((systolic >= 130 && systolic <= 139) ||
-      (diastolic >= 85 && diastolic <= 89)) {
+  } else if (systolic <= 139 && diastolic <= 89) {
     return BloodPressureCategory.highNormal;
   } else if (systolic >= 140 && diastolic < 90) {
     return BloodPressureCategory.isolatedSystolicHypertension;
-  } else if ((systolic >= 140 && systolic <= 159) &&
-      (diastolic >= 90 && diastolic <= 99)) {
+  } else if (systolic <= 159 || diastolic <= 99) {
     return BloodPressureCategory.grade1Hypertension;
-  } else if ((systolic >= 160 && systolic <= 179) &&
-      (diastolic >= 100 && diastolic <= 109)) {
+  } else if (systolic <= 179 || diastolic <= 109) {
     return BloodPressureCategory.grade2Hypertension;
   } else if (systolic >= 180 || diastolic >= 110) {
     return BloodPressureCategory.grade3Hypertension;
+  } else {
+    return null;
   }
-  return null;
 }

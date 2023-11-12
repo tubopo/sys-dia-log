@@ -24,10 +24,14 @@ ListData _mapToListData(Measurement data) {
   BloodPressureCategory? category =
       getBPCategoryByValues(systolic: sys, diastolic: dia);
 
+// unknown category displayed as '-'
+  String categoryName =
+      category?.jsonValue == null ? "-" : "category.${category?.jsonValue}";
+
   return ListData(
     sys,
     dia,
-    "category.${(category?.jsonValue ?? "-")}", // unknown category displayed as '-'
+    categoryName,
     Color(category?.hexColor ?? 0xFF424242), //unknown category color as grey
     data.pulse.bpm,
     data.createdAt,
