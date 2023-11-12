@@ -40,17 +40,19 @@ jobs:
           ALIAS: ${{secrets.ALIAS}}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
           ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
-        run: flutter build apk --release
+        run: |
+          flutter build apk --release
+          flutter build apk --release --split-per-abi --target-platform android-arm,android-arm64,android-x64
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v3
         with:
           name: release-apk-signed
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/*.apk
 
       - name: Create Github Release
         uses: ncipollo/release-action@v1
         with:
           generateReleaseNotes: true
           artifacts: build/app/outputs/flutter-apk/app-release.apk
-          token: ${{ secrets.RELEASE_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
